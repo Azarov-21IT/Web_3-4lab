@@ -1,0 +1,68 @@
+<!DOCTYPE html> <!-- Объявление типа документа -->
+<html> <!-- Начало html документа -->
+<head> <!-- Начало секции заголовка -->
+<meta charset="UTF-8"> <!-- Установка кодировки-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Установка параметров отображения на мобильных устройствах -->
+<title>Аккордеон</title> <!-- Название страницы -->
+<link rel="stylesheet" href="css/style.css"> <!-- Подключение стилей -->
+</head> <!-- Конец секции заголовка -->
+<body> <!-- Начало секции тела -->
+<div class="accordion"> <!-- Создание контейнера для аккордеона -->
+    <div class="accordion-item active">
+        <div class="accordion-item-header">
+            <h2>Accordion Item 1</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
+        </div>
+        <div class="accordion-item-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img src="https://via.placeholder.com/300" alt="image">
+        </div>
+    </div>
+    <div class="accordion-item">
+        <div class="accordion-item-header">
+            <h2>Accordion Item 2</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
+        </div>
+        <div class="accordion-item-body">
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <img src="https://via.placeholder.com/300" alt="image">
+        </div>
+    </div>
+    <div class="accordion-item">
+        <div class="accordion-item-header">
+            <h2>Accordion Item 3</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
+        </div>
+        <div class="accordion-item-body">
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <img src="https://via.placeholder.com/300" alt="image">
+        </div>
+    </div>
+</div>
+<script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            if (!item.classList.contains('active')) {
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                item.classList.add('active');
+            }
+        });
+
+        item.addEventListener('click', () => {
+            if (!item.classList.contains('active')) {
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
