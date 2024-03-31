@@ -3,66 +3,51 @@
 <head> <!-- Начало секции заголовка -->
 <meta charset="UTF-8"> <!-- Установка кодировки-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Установка параметров отображения на мобильных устройствах -->
-<title>Аккордеон</title> <!-- Название страницы -->
-<link rel="stylesheet" href="css/style.css"> <!-- Подключение стилей -->
+<title>Главная</title> <!-- Название страницы -->
+<link rel="stylesheet" href="css/styles.css"> <!-- Подключение стилей -->
 </head> <!-- Конец секции заголовка -->
 <body> <!-- Начало секции тела -->
-<div class="accordion"> <!-- Создание контейнера для аккордеона -->
-    <div class="accordion-item active">
-        <div class="accordion-item-header">
-            <h2>Accordion Item 1</h2>
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
-        </div>
-        <div class="accordion-item-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <img src="https://via.placeholder.com/300" alt="image">
-        </div>
-    </div>
-    <div class="accordion-item">
-        <div class="accordion-item-header">
-            <h2>Accordion Item 2</h2>
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
-        </div>
-        <div class="accordion-item-body">
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <img src="https://via.placeholder.com/300" alt="image">
-        </div>
-    </div>
-    <div class="accordion-item">
-        <div class="accordion-item-header">
-            <h2>Accordion Item 3</h2>
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828775.png" alt="icon">
-        </div>
-        <div class="accordion-item-body">
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <img src="https://via.placeholder.com/300" alt="image">
-        </div>
-    </div>
-</div>
-<script>
-    const accordionItems = document.querySelectorAll('.accordion-item');
-
-    accordionItems.forEach(item => {
-        item.addEventListener('mouseover', () => {
-            if (!item.classList.contains('active')) {
-                accordionItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                item.classList.add('active');
-            }
-        });
-
-        item.addEventListener('click', () => {
-            if (!item.classList.contains('active')) {
-                accordionItems.forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-    });
-</script>
-</body>
-</html>
+  <div class="main"> <!-- Div с классом "main" -->
+    <h1>Css accordion</h1> <!-- Заголовок -->
+    <div class="accordion"> <!-- Div с классом "accordion" -->
+        <section id="one"> <!-- Секция с id "one" -->
+            <h1><a href="#one">Что такое переменные и какие они бывают</a></h1> <!-- Заголовок ссылки -->
+            <div id ="accordion1"> <!-- Div с id "accordion1" -->
+              <p>Именованные области памяти, в которых хранятся данные определенного типа, называются переменными.<br><br>
+                Каждая переменная имеет имя, тип данных и значение. Переменные используются для хранения различных значений, которые могут изменяться в процессе выполнения программы.<br><br>
+                Типы данных:<br>
+                <img src="pictures/data types.png"> <!-- Отображаем изображение из папки "pictures" -->
+              </p>
+            </div> <!-- Закрытие div с id "accordion1" -->
+        </section> <!-- Закрытие секции с id "one" -->
+        <section id="two"> <!-- Секция с id "two" -->
+            <h1><a href="#two">Как нельзя объявлять переменные</a></h1> <!-- Заголовок ссылки -->
+            <div id ="accordion2"> <!-- Div с id "accordion2" -->
+              1. Переменные нельзя объявлять без указания их типа данных.<br><br>
+              2. Переменные нельзя объявлять с одним и тем же именем в одной области видимости. Например, нельзя объявить две переменные с именем "x" внутри одной функции.<br><br>
+              3. Переменные нельзя объявлять с использованием зарезервированных слов или ключевых слов. Например, нельзя объявить переменную с именем "int" или "for".<br><br>
+              4. Переменные нельзя объявлять без инициализации, если это требуется согласно типу данных. Например, если объявляем переменную типа int, то ее необходимо инициализировать значением. <br><br>
+              Таблица как правильно называть переменные:<br>
+              <img src="pictures/proper variable names.jpg"> <!-- Отображаем изображение из папки "pictures" -->
+            </div> <!-- Закрытие div с id "accordion2" -->
+        </section> <!-- Закрытие секции с id "two" -->
+        <section id="three"> <!-- Секция с id "three" -->
+            <h1><a href="#three">Что такое массивы</a></h1> <!-- Заголовок ссылки -->
+            <div id ="accordion3"> <!-- Div с id "accordion3" -->
+                <p>Массивы представляют собой структуру данных, которая позволяет хранить однотипные элементы в последовательности.<br><br>
+                  Каждый элемент массива имеет уникальный индекс, который позволяет обращаться к нему по необходимости.<br><br>
+                  Основные характеристики массивов:<br><br>
+                  Фиксированная длина: размер массива задается при объявлении и не может изменяться в процессе выполнения программы.<br><br>
+                  Однородность: все элементы массива должны быть одного типа данных.<br><br>
+                  Индексация: доступ к элементам массива осуществляется по их индексу, который начинается с 0.<br><br>
+                  Пример объявления массива:<br><br>
+                  int arr[5]; // объявление массива из 5 целочисленных элементов<br><br>
+                  Для работы с массивами используются различные операции, такие как заполнение, сортировка, поиск элемента и другие.<br><br>
+                  Благодаря своей простоте и эффективности, массивы широко применяются в программировании.
+                </p>
+            </div> <!-- Закрытие div с id "accordion3" -->
+        </section> <!-- Закрытие секции с id "three" -->
+    </div> <!-- Конец div с классом "accordion" -->
+</div> <!-- Конец div с классом "main" -->
+</body> <!-- Конец секции тела -->
+</html> <!-- Конец html документа -->

@@ -1,0 +1,77 @@
+@keyframes rainbow { /* Анимация переливного цвета */
+  0% { border-color: red; }
+  16.67% { border-color: orange; }
+  33.33% { border-color: yellow; }
+  50% { border-color: green; }
+  66.67% { border-color: blue; }
+  83.33% { border-color: indigo; }
+  100% { border-color: violet; }
+}
+.main {
+  text-align: center; /* Выравнивание главного текста по центру */
+  margin-top: 50px; /* Отступ главного текста сверху */
+}
+.main h1 {
+  font-size: 24px; /* Размер главного текста */
+  background: linear-gradient(to bottom right, red, orange, yellow, green, blue, indigo, violet); /* Цвет главного текста */
+  -webkit-background-clip: text; /* Для поддержки веб-кит браузеров */
+  color: transparent; /* Скрываем цвет текста */
+}
+section {
+    display: block;
+}
+body {
+  background-color: #550101; /* Цвет фона */
+}
+.accordion {
+  background: linear-gradient(to bottom right, red, orange, yellow, green, blue, indigo, violet); /* Цвет границы квадрата */
+  border: 2px solid; /* Толщина границы квадрата (ласт) */
+  width: 600px; /* Ширина квадрата */
+  padding: 10px; /* Толщина границы квадрата (пред ласт) */
+  margin: 0 auto; /* Помещаем квадрат в середину страницы */
+  animation: rainbow 7s infinite; /* Скорость смены переливки цвета */
+}
+.accordion section {
+    background-color: #ffffff; /* Цвет фона квадрата */
+}
+.accordion h1, .accordion p {
+    margin: 0; /* Высота вкладки */
+}
+.accordion p {
+    padding: 5px;
+}
+.accordion h1 a {
+  display: block; /* Устанавливаем элемент ссылки как блочный для правильного отображения */
+  position: relative; /* Устанавливаем позиционирование элемента как относительное */
+  padding: 8px; /* Добавляем внутренний отступ вокруг текста ссылки */
+  color: #333; /* Цвет текста вкладки */
+  text-decoration: none; /* Убираем нижнее подчеркивание текста вкладки */
+}
+.accordion h1 a:hover {
+    background: #d3d2d2;  /* Цвет фона при наведении курсора на текст вкладки */
+}
+.accordion h1 + div {
+  height: 0; /* Устанавливаем высоту блока на 0, чтобы скрыть его содержимое */
+  overflow: hidden; /* Скрываем содержимое, которое не помещается в заданную высоту */
+  -moz-transition: height 0.3s ease-in-out; /* Анимация изменения высоты для Firefox */
+  -webkit-transition: height 0.3s ease-in-out; /* Анимация изменения высоты для WebKit (Chrome, Safari) */
+  -o-transition: height 0.3s ease-in-out; /* Анимация изменения высоты для Opera */
+  transition: height 0.3s ease-in-out; /* Общая анимация изменения высоты для других браузеров */
+}
+.accordion h1 a:after {
+  content: ''; /* Создание псевдоэлемента */
+  position: absolute; /* Абсолютное позиционирование элемента */
+  right: 10px; /* Отступ справа */
+  top: 50%; /* Положение относительно верхней границы родительского элемента */
+  margin-top: -3px; /* Коррекция вертикального положения */
+  border-top: 5px solid #333; /* Верхняя граница стрелки */
+  border-left: 5px solid transparent; /* Левая граница стрелки (прозрачная) */
+  border-right: 5px solid transparent; /* Правая граница стрелки (прозрачная) */
+  transform: rotate(0deg); /* Поворот стрелки вниз если вкладка не выбрана */
+}
+.accordion :target h1 a:after {
+  transform: rotate(180deg); /* Поворот стрелки вверх если вкладка выбрана */
+}
+.accordion :target h1 + div {
+    height: auto;
+}
